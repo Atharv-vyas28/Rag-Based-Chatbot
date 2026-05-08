@@ -1,4 +1,4 @@
-var chat_id = '1'
+var chat_id = '2'
 
 const handleFileUpload = async (event) => {
     const formData = new FormData();
@@ -26,6 +26,7 @@ async function handleQuery() {
     })
 
     let data = await res.json()
+    alert("Response received. Check console for details.")
     console.log(data.message)
 }
 
