@@ -127,12 +127,12 @@ async def upload_file(file: UploadFile = File(...), chatId: str = Form(...)):
             print("Tables:", doc.metadata.get("tables_html\n"))
             print("Images:", doc.metadata.get("images_base64\n"))
 
-        # vector_store = Chroma.from_documents(
-        #     embedding=embeddings,
-        #     documents=document,
-        #     persist_directory=f"./vector_store/vector_{chatId}",)
+        vector_store = Chroma.from_documents(
+            embedding=embeddings,
+            documents=document,
+            persist_directory=f"./vector_store/vector_{chatId}",)
          
-        # print("\nVector store created\n")  
+        print("\nVector store created\n")  
         
     return{"message" : "done"}
 
